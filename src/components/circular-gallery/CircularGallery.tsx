@@ -457,7 +457,8 @@ class App {
       bend = 1,
       textColor = "#ffffff",
       borderRadius = 0,
-      font = "bold 30px DM Sans",
+      // font = "bold 30px DM Sans",
+      font = "bold 30px Inter",
     }: AppConfig
   ) {
     document.documentElement.classList.remove("no-js");
@@ -508,51 +509,51 @@ class App {
     const defaultItems = [
       {
         image: `https://www.sreevikash.com/wp-content/uploads/2016/10/slide8.jpg`,
-        text: "Bridge",
+        text: "sdfsdf",
       },
       {
         image: `https://www.sreevikash.com/wp-content/uploads/2016/12/IMG_9427.jpg`,
-        text: "Desk Setup",
+        text: "",
       },
       {
         image: `https://www.sreevikash.com/wp-content/uploads/2021/04/SVM04529.jpg`,
-        text: "Waterfall",
+        text: "",
       },
       {
         image: `https://www.sreevikash.com/wp-content/uploads/2022/10/SVM07566.jpg`,
-        text: "Strawberries",
+        text: "",
       },
       {
         image: `https://www.sreevikash.com/wp-content/uploads/2016/12/47-1.jpg`,
-        text: "Deep Diving",
+        text: "",
       },
       {
         image: `https://www.sreevikash.com/wp-content/uploads/2022/10/SVM01451.jpg`,
-        text: "Train Track",
+        text: "",
       },
       {
         image: `https://www.sreevikash.com/wp-content/uploads/2021/04/Pre_wedding_Elements_Resort_Bangalore_Sree_vikash-8.jpg`,
-        text: "Santorini",
+        text: "",
       },
       {
         image: `https://www.sreevikash.com/wp-content/uploads/2018/09/everton-vila-377279-unsplash-550x450.jpg`,
-        text: "Blurry Lights",
+        text: "",
       },
       {
         image: `https://www.sreevikash.com/wp-content/uploads/2016/12/IMG_9427.jpg`,
-        text: "Desk Setup",
+        text: "",
       },
       {
         image: `https://www.sreevikash.com/wp-content/uploads/2021/04/SVM04529.jpg`,
-        text: "Waterfall",
+        text: "",
       },
       {
         image: `https://www.sreevikash.com/wp-content/uploads/2022/10/SVM07566.jpg`,
-        text: "Strawberries",
+        text: "",
       },
       {
         image: `https://www.sreevikash.com/wp-content/uploads/2016/12/47-1.jpg`,
-        text: "Deep Diving",
+        text: "",
       },
     ];
     const galleryItems = items && items.length ? items : defaultItems;
@@ -696,7 +697,8 @@ export default function CircularGallery({
   bend = 3,
   textColor = "#ffffff",
   borderRadius = 0.05,
-  font = "bold 30px DM Sans",
+  // font = "bold 30px DM Sans",
+  font = "bold 30px Inter",
 }: CircularGalleryProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   useEffect(() => {

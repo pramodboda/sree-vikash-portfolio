@@ -32,7 +32,7 @@
   white-space: nowrap;
   font-weight: 600;
   color: #060606;
-  font-size: 4vh;
+  font-size: 3vh;
 }
 
 .menu__item-link:hover {
@@ -78,7 +78,7 @@
   white-space: nowrap;
   text-transform: uppercase;
   font-weight: 400;
-  font-size: 4vh;
+  font-size: 3vh;
   line-height: 1.2;
   padding: 1vh 1vw 0;
 }

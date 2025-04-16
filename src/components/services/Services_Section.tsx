@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 import FlowingMenu from "../animations/FlowingMenu";
 
 const demoItems = [
@@ -35,7 +35,12 @@ const Services_Section: React.FC = () => {
   return (
     <>
       <div style={{ height: "600px", position: "relative" }}>
-        <Typography variant="h2">Services</Typography>
+        <Box sx={{ textAlign: "center" }}>
+          <Typography variant="h1" sx={{ pb: "5rem" }}>
+            Services
+          </Typography>
+        </Box>
+
         <FlowingMenu items={demoItems} />
       </div>
     </>
