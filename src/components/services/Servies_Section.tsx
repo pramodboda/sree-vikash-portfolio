@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { Typography } from "@mui/material";
 import FlowingMenu from '../animations/FlowingMenu';
 
 const demoItems = [
@@ -10,6 +11,7 @@ const demoItems = [
 const Services_Section: React.FC = () => {
     return (<>
         <div style={{ height: '600px', position: 'relative' }}>
+<Typography variant="h4">Services</Typography>
             <FlowingMenu items={demoItems} />
         </div>
     </>)
