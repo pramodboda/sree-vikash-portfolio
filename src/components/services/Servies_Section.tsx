@@ -3,10 +3,11 @@ import { Typography } from "@mui/material";
 import FlowingMenu from '../animations/FlowingMenu';
 
 const demoItems = [
-    { link: '#', text: 'Mojave', image: 'https://picsum.photos/600/400?random=1' },
-    { link: '#', text: 'Sonoma', image: 'https://picsum.photos/600/400?random=2' },
-    { link: '#', text: 'Monterey', image: 'https://picsum.photos/600/400?random=3' },
-    { link: '#', text: 'Sequoia', image: 'https://picsum.photos/600/400?random=4' }]
+    { link: '#', text: 'Portrait Photography', image: 'https://picsum.photos/600/400?random=1' },
+    { link: '#', text: 'Wedding Photography & Film', image: 'https://picsum.photos/600/400?random=2' },
+    { link: '#', text: 'Corporate Photography & Film', image: 'https://picsum.photos/600/400?random=3' },
+    { link: '#', text: 'Print & Design', image: 'https://picsum.photos/600/400?random=4' },
+    { link: '#', text: 'Event Photography & Film', image: 'https://picsum.photos/600/400?random=4' }]
 
 const Services_Section: React.FC = () => {
     return (<>
