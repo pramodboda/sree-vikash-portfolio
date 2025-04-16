@@ -12,7 +12,7 @@ const demoItems = [
 const Services_Section: React.FC = () => {
     return (<>
         <div style={{ height: '600px', position: 'relative' }}>
-<Typography variant="h4">Services</Typography>
+<Typography variant="h2">Services</Typography>
             <FlowingMenu items={demoItems} />
         </div>
     </>)
