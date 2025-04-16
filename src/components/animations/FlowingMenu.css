@@ -40,7 +40,7 @@
 }
 
 .menu__item-link:focus:not(:focus-visible) {
-  color: #fff;
+  color: #060606;
 }
 
 .marquee {
@@ -93,7 +93,7 @@
   background-position: 50% 50%;
 }
 
-.menu__item-link:hover+.marquee {
+.menu__item-link:hover + .marquee {
   transform: translate3d(0, 0%, 0);
 }
 
