@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography, Box } from "@mui/material";
-import FlowingMenu from "../animations/FlowingMenu";
+import FlowingMenu from "../animations/FlowingMenu/FlowingMenu";
 
 const demoItems = [
   {
