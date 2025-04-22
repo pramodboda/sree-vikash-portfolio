@@ -174,7 +174,7 @@ export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
           parallaxStyle={parallaxStyle}
           scrollerStyle={scrollerStyle}
         >
-          <Typography variant="h6">{text}</Typography>&nbsp;
+          <Typography variant="h4">{text}</Typography>&nbsp;
         </VelocityText>
       ))}
     </section>

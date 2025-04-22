@@ -8,7 +8,7 @@ const Testimonials_Section: React.FC = () => {
   return (
     <>
         <ScrollVelocity
-        texts={['React Bits', 'Scroll Down']} 
+        texts={['Testimonals', 'Feedback', 'Reviews', "Appreciation"]} 
         velocity={velocity} 
         className="custom-scroll-text"
         />
