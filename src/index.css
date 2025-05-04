@@ -31,6 +31,10 @@
   font-display: swap;
 }
 
+.section-padding {
+  padding: 400px 0;
+}
+
 /* a {
   font-weight: 500;
   color: #646cff;

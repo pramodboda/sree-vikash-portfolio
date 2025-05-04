@@ -19,7 +19,7 @@ function App() {
         <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} />
       </div>
       <Services_Section />
-      <Testimonials_Section/>
+      <Testimonials_Section />
     </MuiThemeProvider>
   );
 }

@@ -34,7 +34,10 @@ const demoItems = [
 const Services_Section: React.FC = () => {
   return (
     <>
-      <div style={{ height: "600px", position: "relative" }}>
+      <div
+        className="section-padding"
+        style={{ height: "600px", position: "relative" }}
+      >
         <Box sx={{ textAlign: "center" }}>
           <Typography variant="h1" sx={{ pb: "5rem" }}>
             Services
