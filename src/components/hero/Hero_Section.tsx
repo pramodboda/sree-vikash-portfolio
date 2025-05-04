@@ -21,13 +21,14 @@ const Hero_Section: FC = () => {
             fontWeight: 700,
             fontKerning: "normal",
             letterSpacing: "-0.05em",
+
           }}
         >
           Sree Vikash
         </Typography>
       </motion.div>
 
-      <Stack sx={{ flexDirection: "row", justifyContent: "space-between" }}>
+      <Stack sx={{ flexDirection: "row", justifyContent: "space-between", marginTop: {xs: "-20px", sm:"-30px",lg:"-40px"}  }}>
         <Box sx={{ width: { xs: "50%", xl: "33.33%" } }}>
           <motion.div
             initial={{ opacity: 0, y: 10 }}

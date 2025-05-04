@@ -33,10 +33,10 @@ const demoItems = [
 
 const Services_Section: React.FC = () => {
   return (
-    <>
+    <div className="section-padding" style={{display:"flex", width: "100%"}}>
       <div
-        className="section-padding"
-        style={{ height: "600px", position: "relative" }}
+       
+        style={{ width: "100%", minHeight:"600px", position: "relative" }}
       >
         <Box sx={{ textAlign: "center" }}>
           <Typography variant="h1" sx={{ pb: "5rem" }}>
@@ -46,7 +46,7 @@ const Services_Section: React.FC = () => {
 
         <FlowingMenu items={demoItems} />
       </div>
-    </>
+    </div>
   );
 };
 export default Services_Section;

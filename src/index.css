@@ -32,7 +32,10 @@
 }
 
 .section-padding {
-  padding: 400px 0;
+  padding: 100px 0;
+  border: 1px solid red;
+  /* display: flex;
+  height: 100vh; */
 }
 
 /* a {
