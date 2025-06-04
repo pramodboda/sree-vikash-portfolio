@@ -28,8 +28,8 @@ const Hero_Section: FC = () => {
         </Typography>
       </motion.div>
 
-      <Stack sx={{ flexDirection: "row", justifyContent: "space-between", marginTop: {xs: "-20px", sm:"-30px",lg:"-40px"}  }}>
-        <Box sx={{ width: { xs: "50%", xl: "33.33%" } }}>
+      <Stack sx={{ flexDirection: "row", justifyContent: "space-between", marginTop: {xs: "-20px", sm:"-30px",lg:"-60px"},  padding:"0 20px" }}>
+        <Box sx={{ width: { xs: "50%", xl: "33.33%" }, }}>
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
