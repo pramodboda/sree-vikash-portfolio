@@ -1,4 +1,4 @@
-.circular-gallery {
+/* .circular-gallery {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -7,4 +7,26 @@
 
 .circular-gallery:active {
   cursor: grabbing;
+} */
+
+/* // Add this to your CSS */
+.circular-gallery {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.circular-gallery-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.circular-gallery canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
 }

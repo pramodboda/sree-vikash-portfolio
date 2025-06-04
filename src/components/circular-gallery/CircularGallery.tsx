@@ -9,7 +9,7 @@ import {
   Texture,
 } from "ogl";
 
-import "./CircularGallery.css";
+
 
 type GL = Renderer["gl"];
 
@@ -79,76 +79,76 @@ interface TitleProps {
   font?: string;
 }
 
-class Title {
-  gl: GL;
-  plane: Mesh;
-  renderer: Renderer;
-  text: string;
-  textColor: string;
-  font: string;
-  mesh!: Mesh;
+// class Title {
+//   gl: GL;
+//   plane: Mesh;
+//   renderer: Renderer;
+//   text: string;
+//   textColor: string;
+//   font: string;
+//   mesh!: Mesh;
 
-  constructor({
-    gl,
-    plane,
-    renderer,
-    text,
-    textColor = "#545050",
-    font = "30px sans-serif",
-  }: TitleProps) {
-    autoBind(this);
-    this.gl = gl;
-    this.plane = plane;
-    this.renderer = renderer;
-    this.text = text;
-    this.textColor = textColor;
-    this.font = font;
-    this.createMesh();
-  }
+//   constructor({
+//     gl,
+//     plane,
+//     renderer,
+//     text,
+//     textColor = "#545050",
+//     font = "30px sans-serif",
+//   }: TitleProps) {
+//     autoBind(this);
+//     this.gl = gl;
+//     this.plane = plane;
+//     this.renderer = renderer;
+//     this.text = text;
+//     this.textColor = textColor;
+//     this.font = font;
+//     this.createMesh();
+//   }
 
-  createMesh() {
-    const { texture, width, height } = createTextTexture(
-      this.gl,
-      this.text,
-      this.font,
-      this.textColor
-    );
-    const geometry = new Plane(this.gl);
-    const program = new Program(this.gl, {
-      vertex: `
-        attribute vec3 position;
-        attribute vec2 uv;
-        uniform mat4 modelViewMatrix;
-        uniform mat4 projectionMatrix;
-        varying vec2 vUv;
-        void main() {
-          vUv = uv;
-          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-        }
-      `,
-      fragment: `
-        precision highp float;
-        uniform sampler2D tMap;
-        varying vec2 vUv;
-        void main() {
-          vec4 color = texture2D(tMap, vUv);
-          if (color.a < 0.1) discard;
-          gl_FragColor = color;
-        }
-      `,
-      uniforms: { tMap: { value: texture } },
-      transparent: true,
-    });
-    this.mesh = new Mesh(this.gl, { geometry, program });
-    const aspect = width / height;
-    const textHeightScaled = this.plane.scale.y * 0.15;
-    const textWidthScaled = textHeightScaled * aspect;
-    this.mesh.scale.set(textWidthScaled, textHeightScaled, 1);
-    this.mesh.position.y =
-      -this.plane.scale.y * 0.5 - textHeightScaled * 0.5 - 0.05;
-    this.mesh.setParent(this.plane);
-  }
-}
+//   createMesh() {
+//     const { texture, width, height } = createTextTexture(
+//       this.gl,
+//       this.text,
+//       this.font,
+//       this.textColor
+//     );
+//     const geometry = new Plane(this.gl);
+//     const program = new Program(this.gl, {
+//       vertex: `
+//         attribute vec3 position;
+//         attribute vec2 uv;
+//         uniform mat4 modelViewMatrix;
+//         uniform mat4 projectionMatrix;
+//         varying vec2 vUv;
+//         void main() {
+//           vUv = uv;
+//           gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+//         }
+//       `,
+//       fragment: `
+//         precision highp float;
+//         uniform sampler2D tMap;
+//         varying vec2 vUv;
+//         void main() {
+//           vec4 color = texture2D(tMap, vUv);
+//           if (color.a < 0.1) discard;
+//           gl_FragColor = color;
+//         }
+//       `,
+//       uniforms: { tMap: { value: texture } },
+//       transparent: true,
+//     });
+//     this.mesh = new Mesh(this.gl, { geometry, program });
+//     const aspect = width / height;
+//     const textHeightScaled = this.plane.scale.y * 0.15;
+//     const textWidthScaled = textHeightScaled * aspect;
+//     this.mesh.scale.set(textWidthScaled, textHeightScaled, 1);
+//     this.mesh.position.y =
+//       -this.plane.scale.y * 0.5 - textHeightScaled * 0.5 - 0.05;
+//     this.mesh.setParent(this.plane);
+//   }
+// }
 
 interface ScreenSize {
   width: number;
@@ -195,7 +195,7 @@ class Media {
   font?: string;
   program!: Program;
   plane!: Mesh;
-  title!: Title;
+  // title!: Title;
   scale!: number;
   padding!: number;
   width!: number;
@@ -237,7 +237,7 @@ class Media {
     this.font = font;
     this.createShader();
     this.createMesh();
-    this.createTitle();
+    // this.createTitle();
     this.onResize();
   }
 
@@ -326,16 +326,16 @@ class Media {
     this.plane.setParent(this.scene);
   }
 
-  createTitle() {
-    this.title = new Title({
-      gl: this.gl,
-      plane: this.plane,
-      renderer: this.renderer,
-      text: this.text,
-      textColor: this.textColor,
-      font: this.font,
-    });
-  }
+  // createTitle() {
+  //   this.title = new Title({
+  //     gl: this.gl,
+  //     plane: this.plane,
+  //     renderer: this.renderer,
+  //     text: this.text,
+  //     textColor: this.textColor,
+  //     font: this.font,
+  //   });
+  // }
 
   update(
     scroll: { current: number; last: number },
@@ -443,6 +443,7 @@ class App {
 
   boundOnResize!: () => void;
   boundOnWheel!: () => void;
+  boundOnScroll!: () => void;
   boundOnTouchDown!: (e: MouseEvent | TouchEvent) => void;
   boundOnTouchMove!: (e: MouseEvent | TouchEvent) => void;
   boundOnTouchUp!: () => void;
@@ -601,6 +602,11 @@ class App {
     this.onCheckDebounce();
   }
 
+  onScroll() {
+    this.scroll.target += 0.5;
+    this.onCheckDebounce();
+  }
+
   onCheck() {
     if (!this.medias || !this.medias[0]) return;
     const width = this.medias[0].width;
@@ -647,12 +653,14 @@ class App {
   addEventListeners() {
     this.boundOnResize = this.onResize.bind(this);
     this.boundOnWheel = this.onWheel.bind(this);
+    this.boundOnScroll = this.onScroll.bind(this);
     this.boundOnTouchDown = this.onTouchDown.bind(this);
     this.boundOnTouchMove = this.onTouchMove.bind(this);
     this.boundOnTouchUp = this.onTouchUp.bind(this);
     window.addEventListener("resize", this.boundOnResize);
     window.addEventListener("mousewheel", this.boundOnWheel);
     window.addEventListener("wheel", this.boundOnWheel);
+    window.addEventListener("scroll", this.boundOnScroll);
     window.addEventListener("mousedown", this.boundOnTouchDown);
     window.addEventListener("mousemove", this.boundOnTouchMove);
     window.addEventListener("mouseup", this.boundOnTouchUp);
@@ -666,6 +674,7 @@ class App {
     window.removeEventListener("resize", this.boundOnResize);
     window.removeEventListener("mousewheel", this.boundOnWheel);
     window.removeEventListener("wheel", this.boundOnWheel);
+    window.removeEventListener("mousewheel", this.boundOnScroll);
     window.removeEventListener("mousedown", this.boundOnTouchDown);
     window.removeEventListener("mousemove", this.boundOnTouchMove);
     window.removeEventListener("mouseup", this.boundOnTouchUp);
@@ -716,3 +725,4 @@ export default function CircularGallery({
   }, [items, bend, textColor, borderRadius, font]);
   return <div className="circular-gallery" ref={containerRef} />;
 }
+
