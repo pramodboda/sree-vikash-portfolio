@@ -80,9 +80,9 @@ const Hero_Section: FC = () => {
               variant="body2"
               sx={{ fontSize: { xs: "0.6rem", lg: "0.875rem" } }}
             >
-              Somewhere
+              Hennur Cross,
               <br />
-              Somewhere in Bangalore
+              Bangalore, India, 560043
             </Typography>
           </motion.div>
         </Box>
