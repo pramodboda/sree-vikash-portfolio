@@ -7,6 +7,7 @@ import { CssBaseline } from "@mui/material";
 import { ThemeProvider as MuiThemeProvider } from "./contexts/theme/ThemeContext";
 
 import { Box } from "@mui/material";
+import { motion } from "framer-motion";
 
 import Hero_Section from "./components/hero/Hero_Section";
 import CircularGallery from "./components/circular-gallery/CircularGallery";
@@ -37,17 +38,23 @@ function App() {
         {/* <div style={{ height: "600px", position: "relative" }}>
         <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} />
       </div> */}
-
-        <div
-          style={{
-            height: "100vh",
-            width: "100%",
-            position: "relative",
-            overflow: "hidden",
-          }}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.6 }}
+          className="text-xl font-semibold"
         >
-          <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} />
-        </div>
+          <div
+            style={{
+              height: "100vh",
+              width: "100%",
+              position: "relative",
+              overflow: "hidden",
+            }}
+          >
+            <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} />
+          </div>
+        </motion.div>
       </Box>
       <Services_Section />
       <Testimonials_Section />
