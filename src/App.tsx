@@ -2,11 +2,11 @@
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "/vite.svg";
 import "./App.css";
-import "./components/circular-gallery/CircularGallery.css"
+import "./components/circular-gallery/CircularGallery.css";
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider as MuiThemeProvider } from "./contexts/theme/ThemeContext";
 
-import {Box} from "@mui/material"
+import { Box } from "@mui/material";
 
 import Hero_Section from "./components/hero/Hero_Section";
 import CircularGallery from "./components/circular-gallery/CircularGallery";
@@ -14,16 +14,14 @@ import Services_Section from "./components/services/Services_Section";
 import Testimonials_Section from "./components/testimonials/Testimonials_Section";
 import TopNavigation from "./components/TopNavigation/TopNavigation";
 
-
-
 function App() {
-  
   return (
     <MuiThemeProvider>
       <CssBaseline />
-      <TopNavigation/>
-      <Box sx={{padding:"0 0 120px 0", background: "#333333", color: "#f9f9f9"}}>
-      {/* <h2>
+      <TopNavigation />
+      {/* <Box sx={{padding:"0 0 120px 0", background: "#333333", color: "#f9f9f9"}}> */}
+      <Box>
+        {/* <h2>
         <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nisi cupiditate maiores iure ut ex natus recusandae eveniet. Sint suscipit vero, nobis doloribus repudiandae eos cumque itaque et nesciunt vel.</div>
         <div>Pariatur, maiores, consequatur debitis consequuntur corrupti ipsam amet atque dolorum temporibus excepturi quam optio dolor totam, numquam magni! Nobis sint, aliquam sit eaque reprehenderit expedita beatae fugiat in inventore voluptatum!</div>
         <div>Debitis, ipsam. Repudiandae accusantium ut quisquam aliquam in nulla labore qui nam commodi voluptate est aut neque voluptas cupiditate repellat quam, velit obcaecati incidunt nihil at! Quasi praesentium minima veritatis.</div>
@@ -35,25 +33,22 @@ function App() {
         <div>Quod asperiores, temporibus culpa quisquam quibusdam itaque ut accusamus officia, blanditiis officiis minima iusto voluptatum laborum est tempora deserunt esse facere sunt? Obcaecati, numquam enim. Consectetur assumenda error doloribus maiores.</div>
         <div>Officia, mollitia quo laudantium nam dignissimos error quisquam provident labore, maxime recusandae quae, ut quidem accusantium officiis! Omnis nisi error magnam dignissimos, sit mollitia nulla. Ipsum ducimus commodi perspiciatis repellat?</div>
       </h2> */}
-      <Hero_Section />
-      {/* <div style={{ height: "600px", position: "relative" }}>
+        <Hero_Section />
+        {/* <div style={{ height: "600px", position: "relative" }}>
         <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} />
       </div> */}
 
-<div style={{ 
-          height: "100vh",
-          width: "100%",
-          position: "relative",
-          overflow: "hidden"
-        }}>
-          <CircularGallery 
-            bend={3} 
-            textColor="#ffffff" 
-            borderRadius={0.05} 
-          />
+        <div
+          style={{
+            height: "100vh",
+            width: "100%",
+            position: "relative",
+            overflow: "hidden",
+          }}
+        >
+          <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} />
         </div>
-
-        </Box>
+      </Box>
       <Services_Section />
       <Testimonials_Section />
     </MuiThemeProvider>

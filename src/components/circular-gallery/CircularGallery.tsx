@@ -9,8 +9,6 @@ import {
   Texture,
 } from "ogl";
 
-
-
 type GL = Renderer["gl"];
 
 function debounce<T extends (...args: any[]) => void>(func: T, wait: number) {
@@ -510,7 +508,7 @@ class App {
     const defaultItems = [
       {
         image: `https://www.sreevikash.com/wp-content/uploads/2016/10/slide8.jpg`,
-        text: "sdfsdf",
+        text: "",
       },
       {
         image: `https://www.sreevikash.com/wp-content/uploads/2016/12/IMG_9427.jpg`,
@@ -725,4 +723,3 @@ export default function CircularGallery({
   }, [items, bend, textColor, borderRadius, font]);
   return <div className="circular-gallery" ref={containerRef} />;
 }
-
