@@ -9,6 +9,9 @@ import { ThemeProvider as MuiThemeProvider } from "./contexts/theme/ThemeContext
 import { Box } from "@mui/material";
 import { motion } from "framer-motion";
 
+import CallReceivedIcon from "@mui/icons-material/CallReceived";
+
+import CircularText from "./components/circular-text/CircularText";
 import Hero_Section from "./components/hero/Hero_Section";
 import CircularGallery from "./components/circular-gallery/CircularGallery";
 import Services_Section from "./components/services/Services_Section";
@@ -42,6 +45,53 @@ function App() {
         <div>Quod asperiores, temporibus culpa quisquam quibusdam itaque ut accusamus officia, blanditiis officiis minima iusto voluptatum laborum est tempora deserunt esse facere sunt? Obcaecati, numquam enim. Consectetur assumenda error doloribus maiores.</div>
         <div>Officia, mollitia quo laudantium nam dignissimos error quisquam provident labore, maxime recusandae quae, ut quidem accusantium officiis! Omnis nisi error magnam dignissimos, sit mollitia nulla. Ipsum ducimus commodi perspiciatis repellat?</div>
       </h2> */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+        >
+          <Box
+            sx={{
+              position: "absolute",
+              display: "block",
+              top: "6.5rem",
+              right: "17.5rem",
+              // border: "1px solid red",
+              width: "12.5rem", // same size as the icon container
+              height: "12.5rem",
+            }}
+          >
+            {/* Make this the positioning context */}
+            <Box
+              sx={{
+                position: "relative",
+                width: "100%",
+                height: "100%",
+              }}
+            >
+              {/* Center the icon absolutely */}
+              <CallReceivedIcon
+                sx={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  fontSize: "5rem",
+                  // border: "1px solid blue",
+                }}
+              />
+
+              {/* CircularText wraps around it */}
+              <CircularText
+                text="BOOK NOW • HIRE ME • LETS CONNECT • "
+                onHover="speedUp"
+                spinDuration={20}
+                className="custom-class playfair-display circular-text"
+              />
+            </Box>
+          </Box>
+        </motion.div>
+
         <Hero_Section />
         {/* <div style={{ height: "600px", position: "relative" }}>
         <CircularGallery bend={3} textColor="#ffffff" borderRadius={0.05} />

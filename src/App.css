@@ -40,3 +40,15 @@
 .read-the-docs {
   color: #888;
 } */
+
+.playfair-display {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.circular-text {
+  font-size: 2rem !important;
+  letter-spacing: "3rem" !important;
+}
