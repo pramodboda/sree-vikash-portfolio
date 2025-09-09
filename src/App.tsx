@@ -48,14 +48,14 @@ function App() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
+          transition={{ delay: 1.8, duration: 0.6 }}
         >
           <Box
             sx={{
               position: "absolute",
               display: "block",
               top: "6.5rem",
-              right: "17.5rem",
+              right: "14.5rem",
               // border: "1px solid red",
               width: "12.5rem", // same size as the icon container
               height: "12.5rem",

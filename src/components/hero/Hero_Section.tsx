@@ -15,19 +15,20 @@ const Hero_Section: FC = () => {
       >
         {/* Using ReactFitty for Scales up (or down) text so it fits perfectly to its parent container. */}
         {/* Applied kerning and letter-spacing to the hero / Jumbo text */}
-
-        <Typography
-          component={ReactFitty}
-          sx={{
-            // border: "1px solid red",
-            position: "relative",
-            fontWeight: 700,
-            fontKerning: "normal",
-            letterSpacing: "-0.05em",
-          }}
-        >
-          Sree Vikash
-        </Typography>
+        <Box sx={{}}>
+          <Typography
+            component={ReactFitty}
+            sx={{
+              // border: "1px solid red",
+              position: "relative",
+              fontWeight: 700,
+              fontKerning: "normal",
+              letterSpacing: "-0.05em",
+            }}
+          >
+            Sree Vikash
+          </Typography>
+        </Box>
 
         {/* <Fitty minSize={14} maxSize={60} multiLine>
           Sree Vikash

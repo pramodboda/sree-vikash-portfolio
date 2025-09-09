@@ -41,6 +41,10 @@
   color: #888;
 } */
 
+body {
+  min-height: "800px";
+}
+
 .playfair-display {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
