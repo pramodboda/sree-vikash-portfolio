@@ -4,15 +4,16 @@ import React from "react";
 export default function TopNavigation() {
   return (
     <Stack>
-      <Box sx={{ textAlign: "center" }}>
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Stack
           sx={{
             flexDirection: "row",
             listStyle: "none",
-            gap: 2,
+            gap: 8,
             alignItems: "center",
-            "&:a": {
-              color: "white",
+            "& > li > a": {
+              color: "#999999",
+              textDecoration: "none",
             },
           }}
           component="ul"

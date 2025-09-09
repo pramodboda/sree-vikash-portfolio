@@ -19,7 +19,15 @@ function App() {
   return (
     <MuiThemeProvider>
       <CssBaseline />
-      <TopNavigation />
+      <motion.div
+        initial={{ opacity: 0, y: -5 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.6 }}
+        // className="text-xl font-semibold"
+      >
+        <TopNavigation />
+      </motion.div>
+
       {/* <Box sx={{padding:"0 0 120px 0", background: "#333333", color: "#f9f9f9"}}> */}
       <Box>
         {/* <h2>
@@ -42,7 +50,6 @@ function App() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.6 }}
-          className="text-xl font-semibold"
         >
           <div
             style={{
