@@ -9,7 +9,7 @@ import {
   ThemeProvider as MuiThemeProvider,
   createTheme,
 } from "@mui/material/styles";
-import { deepPurple, blueGrey } from "@mui/material/colors";
+import { deepPurple } from "@mui/material/colors";
 
 // Define the shape of the context's data
 interface ThemeContextProps {

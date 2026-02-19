@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { Typography, Stack, Box } from "@mui/material";
 import { ReactFitty } from "react-fitty";
 // import Fitty from "react-fitty";

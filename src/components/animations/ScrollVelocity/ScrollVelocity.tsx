@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 
 import { Typography } from "@mui/material";
 
@@ -48,18 +48,42 @@ interface ScrollVelocityProps {
   scrollerStyle?: React.CSSProperties;
 }
 
-function useElementWidth(ref: React.RefObject<HTMLElement>): number {
-  const [width, setWidth] = useState(0);
+// function useElementWidth(ref: React.RefObject<HTMLElement>): number {
+//   const [width, setWidth] = useState(0);
 
-  useLayoutEffect(() => {
-    function updateWidth() {
-      if (ref.current) {
-        setWidth(ref.current.offsetWidth);
-      }
-    }
+//   useLayoutEffect(() => {
+//     function updateWidth() {
+//       if (ref.current) {
+//         setWidth(ref.current.offsetWidth);
+//       }
+//     }
+//     updateWidth();
+//     window.addEventListener("resize", updateWidth);
+//     return () => window.removeEventListener("resize", updateWidth);
+//   }, [ref]);
+
+//   return width;
+// }
+
+function useElementWidth<T extends HTMLElement>(
+  ref: React.RefObject<T | null>
+) {
+  const [width, setWidth] = useState<number>(0);
+
+  useEffect(() => {
+    if (!ref.current) return;
+
+    const updateWidth = () => {
+      if (!ref.current) return;
+      setWidth(ref.current.offsetWidth);
+    };
+
     updateWidth();
     window.addEventListener("resize", updateWidth);
-    return () => window.removeEventListener("resize", updateWidth);
+
+    return () => {
+      window.removeEventListener("resize", updateWidth);
+    };
   }, [ref]);
 
   return width;
@@ -94,7 +118,9 @@ export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
     scrollerStyle,
   }: VelocityTextProps) {
     const baseX = useMotionValue(0);
-    const scrollOptions = scrollContainerRef ? { container: scrollContainerRef } : {};
+    const scrollOptions = scrollContainerRef
+      ? { container: scrollContainerRef }
+      : {};
     const { scrollY } = useScroll(scrollOptions);
     const scrollVelocity = useVelocity(scrollY);
     const smoothVelocity = useSpring(scrollVelocity, {
@@ -123,7 +149,7 @@ export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
     });
 
     const directionFactor = useRef<number>(1);
-    useAnimationFrame((t, delta) => {
+    useAnimationFrame((delta) => {
       let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 
       if (velocityFactor.get() < 0) {

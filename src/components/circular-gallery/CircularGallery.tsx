@@ -32,50 +32,50 @@ function lerp(p1: number, p2: number, t: number): number {
 //   });
 // }
 
-function getFontSize(font: string): number {
-  const match = font.match(/(\d+)px/);
-  return match ? parseInt(match[1], 10) : 30;
-}
+// function getFontSize(font: string): number {
+//   const match = font.match(/(\d+)px/);
+//   return match ? parseInt(match[1], 10) : 30;
+// }
 
-function createTextTexture(
-  gl: GL,
-  text: string,
-  font: string = "bold 30px monospace",
-  color: string = "black"
-): { texture: Texture; width: number; height: number } {
-  const canvas = document.createElement("canvas");
-  const context = canvas.getContext("2d");
-  if (!context) throw new Error("Could not get 2d context");
+// function createTextTexture(
+//   gl: GL,
+//   text: string,
+//   font: string = "bold 30px monospace",
+//   color: string = "black"
+// ): { texture: Texture; width: number; height: number } {
+//   const canvas = document.createElement("canvas");
+//   const context = canvas.getContext("2d");
+//   if (!context) throw new Error("Could not get 2d context");
 
-  context.font = font;
-  const metrics = context.measureText(text);
-  const textWidth = Math.ceil(metrics.width);
-  const fontSize = getFontSize(font);
-  const textHeight = Math.ceil(fontSize * 1.2);
+//   context.font = font;
+//   const metrics = context.measureText(text);
+//   const textWidth = Math.ceil(metrics.width);
+//   const fontSize = getFontSize(font);
+//   const textHeight = Math.ceil(fontSize * 1.2);
 
-  canvas.width = textWidth + 20;
-  canvas.height = textHeight + 20;
+//   canvas.width = textWidth + 20;
+//   canvas.height = textHeight + 20;
 
-  context.font = font;
-  context.fillStyle = color;
-  context.textBaseline = "middle";
-  context.textAlign = "center";
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  context.fillText(text, canvas.width / 2, canvas.height / 2);
+//   context.font = font;
+//   context.fillStyle = color;
+//   context.textBaseline = "middle";
+//   context.textAlign = "center";
+//   context.clearRect(0, 0, canvas.width, canvas.height);
+//   context.fillText(text, canvas.width / 2, canvas.height / 2);
 
-  const texture = new Texture(gl, { generateMipmaps: false });
-  texture.image = canvas;
-  return { texture, width: canvas.width, height: canvas.height };
-}
+//   const texture = new Texture(gl, { generateMipmaps: false });
+//   texture.image = canvas;
+//   return { texture, width: canvas.width, height: canvas.height };
+// }
 
-interface TitleProps {
-  gl: GL;
-  plane: Mesh;
-  renderer: Renderer;
-  text: string;
-  textColor?: string;
-  font?: string;
-}
+// interface TitleProps {
+//   gl: GL;
+//   plane: Mesh;
+//   renderer: Renderer;
+//   text: string;
+//   textColor?: string;
+//   font?: string;
+// }
 
 // class Title {
 //   gl: GL;
